@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: deephex-proxy
-    env: php
-    buildCommand: ""
-    startCommand: ""
-    plan: free

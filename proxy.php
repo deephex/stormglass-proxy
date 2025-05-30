@@ -1,6 +1,10 @@
 <?php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *'); // Tu peux restreindre ce domaine si besoin
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$allowed = ['https://deephex.github.io'];// Tu peux restreindre ici avec le domaine du front
+if (in_array($origin, $allowed)) {
+    header("Access-Control-Allow-Origin: $origin");
+}
 
 $lat = $_GET['lat'] ?? null;
 $lng = $_GET['lng'] ?? null;
